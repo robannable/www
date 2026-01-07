@@ -1,0 +1,70 @@
+/* themes/default.css */
+:root {
+    --primary-color: #333;
+    --secondary-color: #666;
+    --background-color: #fff;
+    --accent-color: #eee;
+    --max-width: 800px;
+    --font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--primary-color);
+    background: var(--background-color);
+}
+
+article {
+    margin: 2rem 0;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-list li {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.post-list li:last-child {
+    border-bottom: none;
+}
+
+.category {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: var(--accent-color);
+    border-radius: 3px;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+}
+
+time {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    margin-bottom: 2rem;
+}

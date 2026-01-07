@@ -1,0 +1,64 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container for the image grid */
+.container {
+    height: 80vh; /* 80% of the viewport height */
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    max-height: 80vh; /* Ensure it doesn't exceed 80% of viewport height */
+    width: auto; /* Allow width to be determined by height and aspect ratio */
+}
+
+/* Image grid styles */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(3, 1fr); /* 3 rows */
+    gap: 2%;
+    height: 100%; /* Fill the container height */
+}
+
+/* Ensure all images fill their grid cell */
+.image-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Title styles */
+.title {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    color: #333;
+    z-index: 10;
+}
+
+/* Media query for very tall screens */
+@media (min-aspect-ratio: 1/1) {
+    .container {
+        height: 80vh;
+        width: 80vh; /* Set width equal to height for square aspect ratio */
+    }
+}
+
+/* Media query for responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .title {
+        font-size: 18px; /* Smaller font size on mobile */
+    }
+}

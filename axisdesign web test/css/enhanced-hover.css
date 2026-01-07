@@ -1,0 +1,66 @@
+/* Enhanced hover effects for project info boxes */
+
+/* Base styles for the info box */
+.project-info {
+    position: absolute;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #000;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+    pointer-events: none; /* So it doesn't interfere with mouse events */
+}
+
+/* Show the info box on node hover */
+.project-node:hover .project-info {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Project info content styling */
+.project-info h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.project-info p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.project-info .project-year {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Spline connector styles */
+.spline-connector {
+    position: absolute;
+    pointer-events: none;
+    z-index: 9;
+}
+
+/* Ensure the connector has a background to stand out against page background */
+.spline-connector path {
+    stroke: #555;
+    stroke-width: 1.5;
+    stroke-dasharray: 4 2;
+    fill: none;
+}
+
+/* Container for the SVG spline */
+.connector-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 8;
+}

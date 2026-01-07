@@ -1,0 +1,180 @@
+{
+    "projects": [
+        {
+            "id": "ecoterrace",
+            "title": "Ecoterrace",
+            "date": "2008",
+            "image": "images/ecoterrace.jpg",
+            "size": "large",
+            "description": "A comprehensive refurbishment project of 6 Victorian terrace properties in Newcastle-Under-Lyme, substantially increasing environmental performance through innovative sustainable design solutions. The project delivered robust, replicable approaches to improving fabric performance, living space quality, and thermal efficiency, featuring 2-storey spaces replacing traditional outriggers. Extensive post-occupancy monitoring with Hockerton Housing Projects provided valuable data on actual performance results.",
+            "gallery": [
+                {
+                    "url": "images/ecoterrace-interior.jpg",
+                    "caption": "Interior showing sustainable retrofit solutions"
+                },
+                {
+                    "url": "images/ecoterrace-exterior.jpg",
+                    "caption": "Exterior view of refurbished terrace properties"
+                },
+                {
+                    "url": "images/ecoterrace-detail.jpg",
+                    "caption": "Detail of environmental performance features"
+                }
+            ]
+        },
+        {
+            "id": "queens-road",
+            "title": "Queens Road",
+            "date": "2007",
+            "image": "images/queens-road.jpg",
+            "size": "medium",
+            "description": "An exemplar environmentally friendly housing scheme in Stourbridge, carefully orientated to maximize solar gain from south-east and south-west sun. The distinctive saw-tooth layout and innovative roof plan create an animated street scene while achieving Ecohomes 'excellent' rating. Each property has a slightly different relationship with the street, creating visual variety while optimizing environmental performance.",
+            "gallery": [
+                {
+                    "url": "images/queens-road-street.jpg",
+                    "caption": "Street view showing saw-tooth layout"
+                },
+                {
+                    "url": "images/queens-road-detail.jpg",
+                    "caption": "Architectural detail of solar-oriented design"
+                },
+                {
+                    "url": "images/queens-road-roof.jpg",
+                    "caption": "Innovative roof plan and environmental features"
+                }
+            ]
+        },
+        {
+            "id": "self-build-stoke-on-trent",
+            "title": "Self-Build in Stoke-on-Trent",
+            "date": "2012",
+            "image": "images/self-build-stoke.jpg",
+            "size": "medium",
+            "description": "Stoke-on-Trent City Council's first Custom Home Building project at the former Penkhull Farm site. The project incorporates Affordable Passivhaus research to deliver high-performance, low-cost housing solutions for self-builders. Supported by web-based project management and BIM technologies, the scheme won 'Best Custom Build Scheme' at the 2013 Build It awards, demonstrating innovative approaches to supporting self-builders.",
+            "gallery": [
+                {
+                    "url": "images/self-build-proposals.jpg",
+                    "caption": "Proposed house types for self-builders"
+                },
+                {
+                    "url": "images/self-build-site.jpg",
+                    "caption": "Penkhull Farm site development"
+                },
+                {
+                    "url": "images/self-build-passivhaus.jpg",
+                    "caption": "Passivhaus principles integration"
+                }
+            ]
+        },
+        {
+            "id": "birmingham-settlement-community-building",
+            "title": "Birmingham Settlement Community Building",
+            "date": "2020",
+            "image": "images/birmingham-settlement.jpg",
+            "size": "medium",
+            "description": "A new community building for Birmingham Settlement on their waterside green space next to Edgbaston Reservoir. The building creates a beacon against the landscape using an unusual roof form and carefully selected color palette. Collaboration with Webb Yates engineers ensures quality detailing of low-carbon, natural materials including Porotherm clay blocks, cellulose insulation and timber.",
+            "gallery": [
+                {
+                    "url": "images/birmingham-settlement-exterior.jpg",
+                    "caption": "Waterside setting with distinctive roof form"
+                },
+                {
+                    "url": "images/birmingham-settlement-materials.jpg",
+                    "caption": "Natural materials and sustainable construction"
+                },
+                {
+                    "url": "images/birmingham-settlement-landscape.jpg",
+                    "caption": "Integration with reservoir landscape"
+                }
+            ]
+        },
+        {
+            "id": "cotteridge-park-community-building",
+            "title": "Cotteridge Park Community Building",
+            "date": "2020",
+            "image": "images/cotteridge-park.jpg",
+            "size": "small",
+            "description": "A robust community facility for Friends of Cotteridge Park designed to have minimal landscape impact. Created in collaboration with Wikihouse using innovative CNC-routed plywood construction, the building features box panels and beams that are fully insulated and assembled on site. The structure is finished with metal cladding for community art murals, triple glazing for efficiency, and a sedum roof for seasonal response.",
+            "gallery": [
+                {
+                    "url": "images/cotteridge-park-construction.jpg",
+                    "caption": "Wikihouse CNC construction assembly"
+                },
+                {
+                    "url": "images/cotteridge-park-interior.jpg",
+                    "caption": "Interior showing plywood structure"
+                },
+                {
+                    "url": "images/cotteridge-park-exterior.jpg",
+                    "caption": "Completed building with sedum roof"
+                }
+            ]
+        },
+        {
+            "id": "coworking-concepts",
+            "title": "Coworking Concepts",
+            "date": "2020",
+            "image": "images/coworking-concepts.jpg",
+            "size": "small",
+            "description": "Concept proposals for Witton Lakes Community Association exploring the refurbishment and re-use of a public baths building for co-working and community services. The project investigates how historic community buildings can be adapted for contemporary uses while preserving architectural heritage. Collaboration with cost consultants considers phasing and fundraising strategies to support future development.",
+            "gallery": [
+                {
+                    "url": "images/coworking-concepts-existing.jpg",
+                    "caption": "Existing public baths building"
+                },
+                {
+                    "url": "images/coworking-concepts-interior.jpg",
+                    "caption": "Proposed co-working space interior"
+                },
+                {
+                    "url": "images/coworking-concepts-heritage.jpg",
+                    "caption": "Heritage features integration"
+                }
+            ]
+        },
+        {
+            "id": "witton-lakes-ecohub",
+            "title": "Witton Lakes Ecohub",
+            "date": "2020",
+            "image": "images/witton-lakes-ecohub.jpg",
+            "size": "medium",
+            "description": "A community hall extension to the existing Park Keeper's cottage by Witton Lakes reservoir, creating a base for events and displays focused on energy-saving, landscape and ecology. Sustainable construction features collaboration with Price & Myers engineers on a visible glulam timber frame structure. The Ecohub integrates community facility provision with environmental education, embodying the principles it promotes.",
+            "gallery": [
+                {
+                    "url": "images/witton-lakes-timber-frame.jpg",
+                    "caption": "Glulam timber frame structure"
+                },
+                {
+                    "url": "images/witton-lakes-extension.jpg",
+                    "caption": "Community hall extension to existing cottage"
+                },
+                {
+                    "url": "images/witton-lakes-education.jpg",
+                    "caption": "Environmental education displays"
+                }
+            ]
+        },
+        {
+            "id": "riba-rethink-street-support-hub",
+            "title": "RIBA's Rethink: 2025 Competition - Street Support Hub",
+            "date": "2020",
+            "image": "images/street-support-hub.jpg",
+            "size": "large",
+            "description": "A competition entry proposing infrastructure facilities linking private homes with local government services, green energy, and community support. The Street Support Hub combines green energy sources, community common rooms, and e-vehicle charging stations to downscale activities closer to home. Inspired by mutual aid networks and community care principles, the proposal envisions resilient neighborhood infrastructure responding to pandemic challenges and sustainable service delivery.",
+            "gallery": [
+                {
+                    "url": "images/street-support-hub-concept.jpg",
+                    "caption": "Street Support Hub concept diagram"
+                },
+                {
+                    "url": "images/street-support-hub-energy.jpg",
+                    "caption": "Green energy and charging infrastructure"
+                },
+                {
+                    "url": "images/street-support-hub-community.jpg",
+                    "caption": "Community common room and services"
+                }
+            ]
+        }
+    ]
+} 

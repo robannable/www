@@ -1,0 +1,79 @@
+/* modal.css - Project detail modal styles */
+.project-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    max-height: 90vh;
+    background-color: white;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.project-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project-year, .project-location, .project-client {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.project-description {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.project-tags {
+    margin: 15px 0;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.completion-status {
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.project-images img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+}

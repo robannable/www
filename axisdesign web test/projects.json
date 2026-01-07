@@ -1,0 +1,24 @@
+{
+    "collections": [
+      {
+        "name": "future", 
+        "path": "future/future-projects.json",
+        "description": "Upcoming research and planned projects"
+      },
+      {
+        "name": "current", 
+        "path": "current/current-projects.json",
+        "description": "Active projects in development"
+      },
+      {
+        "name": "past", 
+        "path": "past/past-projects.json",
+        "description": "Completed historical projects"
+      }
+    ],
+    "timelineConfig": {
+      "baseOffset": 50,
+      "spacing": 15,
+      "defaultInfoAlignment": "right"
+    }
+  }

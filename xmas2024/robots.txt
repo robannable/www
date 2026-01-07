@@ -1,0 +1,13 @@
+#  NO access (all to images)
+
+User-agent: *
+Disallow: /images/
+Disallow: /gifts/
+
+#  NO access (Google images)
+
+User-agent: Googlebot-Image
+Disallow: /
+
+
+

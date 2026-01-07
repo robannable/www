@@ -1,0 +1,41 @@
+{
+    "projects": [
+      {
+        "id": "future-001",
+        "position": 2,
+        "name": "Vertical Urban Forest",
+        "shortDescription": "Research into vertical greenery integration for urban high-rises",
+        "fullDescription": "A comprehensive study exploring innovative ways to incorporate self-sustaining forest ecosystems into vertical structures within dense urban environments.",
+        "thumbnailUrl": "future/assets/urban-forest-thumb.jpg",
+        "images": [
+          "future/assets/urban-forest-concept-1.jpg",
+          "future/assets/urban-forest-concept-2.jpg"
+        ],
+        "size": "l",
+        "horizontalPosition": "center",
+        "infoAlignment": "right",
+        "tags": ["research", "sustainability", "urban", "innovation"],
+        "year": 2026,
+        "collaborators": ["Urban Ecology Institute", "City Planning Department"]
+      },
+      {
+        "id": "future-002",
+        "position": 1,
+        "name": "Modular Housing System",
+        "shortDescription": "Adaptable housing modules for changing family structures",
+        "fullDescription": "Development of a modular housing system that can be reconfigured as family needs change over time, addressing issues of housing affordability and flexibility.",
+        "thumbnailUrl": "future/assets/modular-housing-thumb.jpg",
+        "images": [
+          "future/assets/modular-housing-1.jpg",
+          "future/assets/modular-housing-2.jpg"
+        ],
+        "size": "m",
+        "horizontalPosition": "right",
+        "infoAlignment": "left",
+        "tags": ["housing", "modular", "innovation", "residential"],
+        "year": 2025,
+        "collaborators": ["Housing Authority", "Prefab Technologies Inc."]
+      }
+    ]
+  }
+  

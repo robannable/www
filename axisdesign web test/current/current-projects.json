@@ -1,0 +1,25 @@
+{
+    "projects": [
+      {
+        "id": "current-001",
+        "position": 0,
+        "name": "Riverside Cultural Center",
+        "shortDescription": "Multi-use cultural hub with integrated landscape design",
+        "fullDescription": "A landmark project creating a new cultural destination for the city that blends indoor and outdoor spaces seamlessly. Features a theater, galleries, and public gathering spaces.",
+        "thumbnailUrl": "current/assets/cultural-center-thumb.jpg",
+        "images": [
+          "current/assets/cultural-center-1.jpg",
+          "current/assets/cultural-center-2.jpg",
+          "current/assets/cultural-center-3.jpg"
+        ],
+        "size": "l",
+        "horizontalPosition": "center",
+        "infoAlignment": "right",
+        "tags": ["cultural", "public", "landscape", "ongoing"],
+        "year": 2025,
+        "completionPercent": 45,
+        "client": "Metropolitan Arts Council",
+        "location": "Riverside District, Downtown"
+      }
+    ]
+  }

@@ -1,0 +1,84 @@
+{
+    "projects": [
+      {
+        "id": "past-001",
+        "position": -1,
+        "name": "Seaside Pavilion",
+        "shortDescription": "Award-winning temporary pavilion exploring themes of impermanence",
+        "fullDescription": "A temporary beach pavilion constructed from sustainable materials that responds to tidal patterns and changes throughout the day. Winner of the National Architecture Prize for Temporary Structures.",
+        "thumbnailUrl": "past/assets/seaside-pavilion-thumb.jpg",
+        "images": [
+          "past/assets/seaside-pavilion-1.jpg",
+          "past/assets/seaside-pavilion-2.jpg",
+          "past/assets/seaside-pavilion-3.jpg",
+          "past/assets/seaside-pavilion-4.jpg"
+        ],
+        "size": "m",
+        "horizontalPosition": "left",
+        "infoAlignment": "right",
+        "tags": ["temporary", "award", "pavilion", "coastal"],
+        "year": 2024,
+        "client": "Summer Arts Festival",
+        "location": "East Beach"
+      },
+      {
+        "id": "past-002",
+        "position": -2,
+        "name": "Hillside Residence",
+        "shortDescription": "Private residence embedded into challenging hillside terrain",
+        "fullDescription": "A family home designed to respect and integrate with a steep hillside site. Uses passive solar principles and sustainable materials throughout.",
+        "thumbnailUrl": "past/assets/hillside-residence-thumb.jpg",
+        "images": [
+          "past/assets/hillside-residence-1.jpg",
+          "past/assets/hillside-residence-2.jpg",
+          "past/assets/hillside-residence-3.jpg"
+        ],
+        "size": "s",
+        "horizontalPosition": "center",
+        "infoAlignment": "left",
+        "tags": ["residential", "hillside", "sustainable", "private"],
+        "year": 2023,
+        "client": "Private Client",
+        "location": "North Hills"
+      },
+      {
+        "id": "past-003",
+        "position": -3,
+        "name": "City Library Renovation",
+        "shortDescription": "Modernization of historic central library with preservation of heritage elements",
+        "fullDescription": "A careful renovation that brought modern functionality to a century-old civic building while preserving its historic character and significance.",
+        "thumbnailUrl": "past/assets/library-thumb.jpg",
+        "images": [
+          "past/assets/library-1.jpg",
+          "past/assets/library-2.jpg",
+          "past/assets/library-3.jpg"
+        ],
+        "size": "l",
+        "horizontalPosition": "right",
+        "infoAlignment": "left",
+        "tags": ["renovation", "heritage", "civic", "public"],
+        "year": 2022,
+        "client": "City Council",
+        "location": "Central Square"
+      },
+      {
+        "id": "past-004",
+        "position": -4,
+        "name": "Micro-Apartment Complex",
+        "shortDescription": "Innovative housing solution for urban density",
+        "fullDescription": "A residential building featuring innovative micro-apartments with transformable spaces, addressing urban housing shortages while maintaining quality of life.",
+        "thumbnailUrl": "past/assets/micro-apartments-thumb.jpg",
+        "images": [
+          "past/assets/micro-apartments-1.jpg",
+          "past/assets/micro-apartments-2.jpg"
+        ],
+        "size": "m",
+        "horizontalPosition": "center",
+        "infoAlignment": "right",
+        "tags": ["housing", "urban", "micro", "innovative"],
+        "year": 2021,
+        "client": "Urban Housing Corporation",
+        "location": "Downtown"
+      }
+    ]
+  }

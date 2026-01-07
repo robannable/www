@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Timeline - Enhanced Hover</title>
+    <!-- Link to CSS files -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/timeline-updated.css">
+    <link rel="stylesheet" href="css/enhanced-hover.css">
+    <link rel="stylesheet" href="css/modal.css">
+    
+    <!-- Add this for testing purposes -->
+    <script src="setup-test-environment.js"></script>
+</head>
+<body>
+    <div id="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="horizontal-line"></div>
+        <div class="axis-label">axis<br>design</div>
+        
+        <div class="nav-links">
+            <a href="#" id="about-link">about</a>
+            <a href="#" id="contact-link">contact</a>
+        </div>
+        
+        <div class="vertical-arrows">
+            <div class="arrow-up">↑</div>
+            <div class="arrow-down">↓</div>
+        </div>
+        
+        <!-- Projects will be dynamically added here -->
+    </div>
+
+    <!-- Project detail modal template (hidden by default) -->
+    <div id="project-modal" class="project-modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 class="project-title"></h2>
+            <div class="project-year"></div>
+            <div class="project-location"></div>
+            <div class="project-client"></div>
+            <div class="project-description"></div>
+            <div class="project-tags"></div>
+            <div class="completion-status"></div>
+            <div class="project-images"></div>
+        </div>
+    </div>
+
+    <!-- Load JavaScript files in the correct order -->
+    <script src="js/project-loader.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/timeline-enhanced.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/debug-helper.js"></script>
+</body>
+</html>
