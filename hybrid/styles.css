@@ -1,0 +1,998 @@
+/* ==========================================================================
+   AXIS DESIGN HYBRID - Unified Design System
+   Combining the best elements from all design iterations
+   ========================================================================== */
+
+/* CSS Custom Properties */
+:root {
+    /* Colors - from axis green + axisdesign yellow */
+    --primary-green: #1a472a;
+    --highlight-yellow: #fff04d;
+    --accent-rust: #B8621B;
+    --accent-sage: #90C695;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --text-muted: #888;
+    --bg-light: #f5f5f5;
+    --bg-white: #ffffff;
+    --border-color: #eee;
+
+    /* Typography */
+    --font-display: 'Kanit', sans-serif;
+    --font-body: 'Merriweather', Georgia, serif;
+    --font-ui: 'Roboto', sans-serif;
+
+    /* Spacing */
+    --max-width: 900px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+}
+
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-display);
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-white);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1.5rem;
+    padding-top: calc(2.5rem + 40px);
+}
+
+/* ==========================================================================
+   Fixed Top Navigation Bar (from axisdesign)
+   ========================================================================== */
+
+.top-bar {
+    background-color: var(--bg-light);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav-links {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0 0.4rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-green);
+}
+
+/* ==========================================================================
+   Header & Branding (from axisdesign + axis)
+   ========================================================================== */
+
+.site-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.branding {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.branding h1 {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin: 0 0 0.1rem 0;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--text-primary);
+}
+
+.branding h2 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin: 0;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    transform: scaleX(1.12);
+    transform-origin: left;
+    margin-left: -0.1em;
+    color: var(--text-primary);
+}
+
+/* Shape Navigation (from axis) */
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.nav-button {
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--primary-green);
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-green);
+}
+
+.nav-button:hover {
+    background-color: rgba(26, 71, 42, 0.1);
+    transform: scale(1.05);
+}
+
+.nav-button.active {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.nav-circle {
+    border-radius: 50%;
+}
+
+.nav-square {
+    border-radius: 0;
+}
+
+.nav-duck {
+    border-radius: 18px 18px 0 18px;
+}
+
+.nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+}
+
+.nav-hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--primary-green);
+    margin: 0 auto;
+    transition: background 0.3s ease;
+}
+
+.nav-hamburger.active span {
+    background: white;
+}
+
+/* ==========================================================================
+   Image Gallery (from axisdesign)
+   ========================================================================== */
+
+.image-gallery {
+    position: relative;
+    margin: var(--spacing-md) 0;
+    overflow: hidden;
+}
+
+.gallery-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.gallery-item {
+    position: relative;
+    height: 220px;
+    min-width: 330px;
+    margin-right: 0;
+    overflow: hidden;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.1);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    filter: grayscale(0%) contrast(1);
+    transform: scale(1.05);
+}
+
+.image-hover-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .image-hover-info {
+    transform: translateY(0);
+}
+
+.image-hover-info h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.image-hover-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+.gallery-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--highlight-yellow);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.gallery-control:hover {
+    background: #e6d800;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-control.prev {
+    left: 0;
+}
+
+.gallery-control.next {
+    right: 0;
+}
+
+/* ==========================================================================
+   Quote Section (from axisdesign)
+   ========================================================================== */
+
+.quote-section {
+    margin: var(--spacing-lg) 0;
+    font-family: var(--font-body);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    text-align: justify;
+}
+
+/* Highlight (from axisdesign + xmas2024) */
+.highlight {
+    background-color: var(--highlight-yellow);
+    padding: 0 0.25em;
+}
+
+/* ==========================================================================
+   Interactive Grid Section (from axis grid)
+   ========================================================================== */
+
+.grid-section {
+    margin: var(--spacing-lg) 0;
+}
+
+.section-heading {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.05em;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.grid-item {
+    aspect-ratio: 1;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.grid-item:hover {
+    transform: scale(0.97);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text Items */
+.grid-item.text-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-item .tile-label {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Grid Overlays */
+.grid-item .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.grid-item.expanded .overlay,
+.grid-item:hover .overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.grid-item .text-overlay {
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.text-popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.popup-text {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.popup-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.2s ease;
+}
+
+.popup-link:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.overlay-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.overlay-desc {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   Section Divider
+   ========================================================================== */
+
+.section-divider {
+    border: none;
+    border-top: 1px solid var(--text-primary);
+    margin: var(--spacing-lg) 0;
+    width: 100%;
+}
+
+/* ==========================================================================
+   Timeline Section (from axisdesign web test)
+   ========================================================================== */
+
+.timeline-section {
+    margin: var(--spacing-lg) 0;
+}
+
+.timeline-container {
+    position: relative;
+    padding: var(--spacing-md) 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--primary-green);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.timeline-node {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: 2px solid var(--primary-green);
+    background: var(--bg-white);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.timeline-node.size-s {
+    width: 20px;
+    height: 20px;
+}
+
+.timeline-node.size-m {
+    width: 28px;
+    height: 28px;
+}
+
+.timeline-node.size-l {
+    width: 36px;
+    height: 36px;
+}
+
+.timeline-item:hover .timeline-node {
+    background: var(--primary-green);
+    box-shadow: 0 0 12px rgba(26, 71, 42, 0.4);
+}
+
+.timeline-content {
+    width: 42%;
+    padding: 1.2rem;
+    background: var(--bg-light);
+    border-left: 3px solid var(--primary-green);
+    transition: all 0.3s ease;
+}
+
+.timeline-content.left {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.timeline-content.right {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.timeline-item:hover .timeline-content {
+    background: var(--highlight-yellow);
+    border-color: var(--accent-rust);
+}
+
+.timeline-year {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-green);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.timeline-content p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Current Project Section (from axisdesign)
+   ========================================================================== */
+
+.current-project {
+    margin: var(--spacing-md) 0;
+    line-height: 1.8;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-green);
+}
+
+.content {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.current-project-image {
+    margin: var(--spacing-md) 0;
+    width: 100%;
+}
+
+.current-project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Caption (from xmas2024) */
+.caption {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: left;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   About Section with Long-form Content (from xmas2024 + axisdesign)
+   ========================================================================== */
+
+.about-section {
+    margin: var(--spacing-lg) 0;
+}
+
+.about-content p {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+/* Services (from axisdesign) */
+.services {
+    margin: var(--spacing-md) 0;
+}
+
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.service-icon {
+    font-size: 0.9rem;
+    color: var(--primary-green);
+    margin-right: 1rem;
+    margin-top: 0.3rem;
+}
+
+.service-text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.service-text strong {
+    font-weight: 600;
+    color: var(--primary-green);
+}
+
+/* ==========================================================================
+   Blog Preview Section (from axisdesign)
+   ========================================================================== */
+
+.blog-preview {
+    margin: var(--spacing-lg) 0;
+}
+
+.blog-entries {
+    margin-top: var(--spacing-md);
+    border: 1px dashed var(--text-primary);
+    padding: 1.5rem;
+}
+
+.blog-entry h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.blog-title-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.blog-title-link:hover {
+    color: var(--primary-green);
+    text-decoration: underline;
+}
+
+.blog-entry time {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+}
+
+.blog-content {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+}
+
+.blog-content p {
+    text-align: justify;
+}
+
+.read-more, .view-all {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.read-more:hover, .view-all:hover {
+    color: var(--accent-rust);
+    text-decoration: underline;
+}
+
+.post-divider {
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+    margin: 1.5rem 0;
+}
+
+.view-all {
+    margin-top: var(--spacing-md);
+}
+
+/* ==========================================================================
+   Footnotes (from xmas2024)
+   ========================================================================== */
+
+.footnotes {
+    border-top: 1px solid var(--border-color);
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+}
+
+.footnotes ol {
+    padding-left: 1.5rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.footnotes li {
+    margin-bottom: 0.5rem;
+}
+
+.footnote-ref {
+    font-size: 0.7em;
+    color: var(--text-muted);
+    text-decoration: none;
+    vertical-align: super;
+    margin-left: 2px;
+}
+
+.footnote-ref:hover {
+    color: var(--primary-green);
+}
+
+.footnote-backref {
+    text-decoration: none;
+    margin-left: 0.5rem;
+    color: var(--primary-green);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-branding {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-green);
+}
+
+.footer-tagline {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.footer-contact {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.footer-contact p {
+    margin-bottom: 0.3rem;
+}
+
+.footer-contact a {
+    color: var(--primary-green);
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* ==========================================================================
+   Responsive Design (combined from all designs)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+        padding-top: calc(2.5rem + 30px);
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .branding h1 {
+        font-size: 2.2rem;
+    }
+
+    .branding h2 {
+        font-size: 1.7rem;
+    }
+
+    .nav-buttons {
+        order: -1;
+    }
+
+    /* Gallery responsive */
+    .gallery-item {
+        height: 180px;
+        min-width: 270px;
+    }
+
+    .gallery-control {
+        padding: 0.7rem;
+    }
+
+    /* Grid responsive */
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Timeline responsive */
+    .timeline-line {
+        left: 20px;
+    }
+
+    .timeline-item {
+        justify-content: flex-start;
+        padding-left: 50px;
+    }
+
+    .timeline-node {
+        left: 20px;
+    }
+
+    .timeline-content {
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    .timeline-content.left,
+    .timeline-content.right {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Quote responsive */
+    .quote-section {
+        font-size: 1.1rem;
+    }
+
+    /* Blog responsive */
+    .blog-entry h3 {
+        font-size: 1.15rem;
+    }
+
+    /* Footer responsive */
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-contact {
+        text-align: left;
+    }
+
+    .nav-links {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.75rem;
+        padding-top: calc(2.5rem + 25px);
+    }
+
+    .branding h1 {
+        font-size: 1.8rem;
+    }
+
+    .branding h2 {
+        font-size: 1.4rem;
+    }
+
+    .nav-button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .gallery-item {
+        height: 150px;
+        min-width: 225px;
+    }
+
+    .grid-container {
+        gap: 0.6rem;
+    }
+
+    .grid-item .tile-label {
+        font-size: 1rem;
+    }
+
+    .image-hover-info {
+        padding: 0.6rem;
+    }
+
+    .timeline-content {
+        padding: 1rem;
+    }
+
+    .blog-entries {
+        padding: 1rem;
+    }
+
+    .services {
+        margin: var(--spacing-sm) 0;
+    }
+
+    .service-item {
+        flex-direction: column;
+    }
+
+    .service-icon {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* ==========================================================================
+   Accessibility Enhancements
+   ========================================================================== */
+
+:focus-visible {
+    outline: 3px solid var(--primary-green);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
