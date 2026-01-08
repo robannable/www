@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rob Annable at Axis Design - Architecture practice specializing in sustainable community buildings, eco-design, and thoughtful urban development.">
+    <title>Rob Annable | Axis Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fixed Top Navigation Bar -->
+    <div class="top-bar">
+        <nav class="nav-links">
+            <a href="#home">home</a> /
+            <a href="#about">about</a> /
+            <a href="#projects">projects</a> /
+            <a href="#timeline">timeline</a> /
+            <a href="#blog">blog</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section with Shape Navigation -->
+    <header class="site-header" id="home">
+        <div class="header-content">
+            <div class="branding">
+                <h1>rob annable</h1>
+                <h2>@ axis design</h2>
+            </div>
+            <nav class="nav-buttons">
+                <a href="#home" class="nav-button nav-circle active" title="Home"></a>
+                <a href="#projects" class="nav-button nav-square" title="Projects"></a>
+                <a href="#timeline" class="nav-button nav-duck" title="Timeline"></a>
+                <a href="#about" class="nav-button nav-hamburger" title="About">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Image Gallery with Grayscale Hover -->
+        <section class="image-gallery">
+            <button class="gallery-control prev" aria-label="Previous image">&larr;</button>
+            <div class="gallery-container">
+                <div class="gallery-track">
+                    <figure class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="Architecture 1" loading="lazy">
+                        <div class="image-hover-info">
+                            <h3>urban tower</h3>
+                            <p>Mixed-use development, 2024</p>
+                        </div>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&h=400&fit=crop" alt="Architecture 2" loading="lazy">
+                        <div class="image-hover-info">
+                            <h3>community hub</h3>
+                            <p>Public space design, 2023</p>
+                        </div>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=600&h=400&fit=crop" alt="Architecture 3" loading="lazy">
+                        <div class="image-hover-info">
+                            <h3>heritage restoration</h3>
+                            <p>Conservation project, 2023</p>
+                        </div>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&h=400&fit=crop" alt="Architecture 4" loading="lazy">
+                        <div class="image-hover-info">
+                            <h3>eco residence</h3>
+                            <p>Sustainable housing, 2022</p>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+            <button class="gallery-control next" aria-label="Next image">&rarr;</button>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section">
+            Architecture should speak of its time and place, but <span class="highlight">yearn for timelessness</span>. We design buildings that breathe with their communities, sustainable not just in materials but in purpose.
+        </section>
+
+        <!-- Interactive Grid Section -->
+        <section class="grid-section" id="projects">
+            <h2 class="section-heading">explore</h2>
+            <div class="grid-container">
+                <div class="grid-item text-item" style="background-color: #1a472a;">
+                    <span class="tile-label">about</span>
+                    <div class="overlay text-overlay">
+                        <div class="text-popup-content">
+                            <p class="popup-text">Axis Design is an architecture practice focused on sustainable community buildings and thoughtful urban development.</p>
+                            <a href="#about" class="popup-link">learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item image-item">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop" alt="Landscape">
+                    <div class="overlay">
+                        <div>
+                            <div class="overlay-title">landscape studies</div>
+                            <div class="overlay-desc">Site analysis and environmental integration</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item text-item" style="background-color: #90C695;">
+                    <span class="tile-label">projects</span>
+                    <div class="overlay text-overlay">
+                        <div class="text-popup-content">
+                            <p class="popup-text">View our portfolio of residential, commercial, and community projects spanning two decades.</p>
+                            <a href="#timeline" class="popup-link">view portfolio</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item image-item">
+                    <img src="https://images.unsplash.com/photo-1444927714506-8492d94b5ba0?w=400&h=400&fit=crop" alt="Urban">
+                    <div class="overlay">
+                        <div>
+                            <div class="overlay-title">urban exploration</div>
+                            <div class="overlay-desc">Discovering stories within city spaces</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item text-item" style="background-color: #B8621B;">
+                    <span class="tile-label">contact</span>
+                    <div class="overlay text-overlay">
+                        <div class="text-popup-content">
+                            <p class="popup-text">Get in touch to discuss your project. We welcome commissions of all scales.</p>
+                            <a href="mailto:hello@axisdesign.co.uk" class="popup-link">get in touch</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item image-item">
+                    <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=400&fit=crop" alt="Abstract">
+                    <div class="overlay">
+                        <div>
+                            <div class="overlay-title">material studies</div>
+                            <div class="overlay-desc">Form, texture, and sustainable materials</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Timeline Section -->
+        <section class="timeline-section" id="timeline">
+            <h2 class="section-heading">project timeline</h2>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item" data-year="2024">
+                    <div class="timeline-node size-l"></div>
+                    <div class="timeline-content left">
+                        <span class="timeline-year">2024</span>
+                        <h3>Urban Mixed-Use Tower</h3>
+                        <p>A 12-storey development combining residential, retail, and community spaces with passive house certification.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2023">
+                    <div class="timeline-node size-m"></div>
+                    <div class="timeline-content right">
+                        <span class="timeline-year">2023</span>
+                        <h3>Community Arts Hub</h3>
+                        <p>Adaptive reuse of a Victorian warehouse into a vibrant cultural venue for the local community.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2022">
+                    <div class="timeline-node size-m"></div>
+                    <div class="timeline-content left">
+                        <span class="timeline-year">2022</span>
+                        <h3>Eco-House Prototype</h3>
+                        <p>An experimental dwelling showcasing natural building materials and zero-carbon living.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2021">
+                    <div class="timeline-node size-s"></div>
+                    <div class="timeline-content right">
+                        <span class="timeline-year">2021</span>
+                        <h3>Heritage Barn Conversion</h3>
+                        <p>Sensitive conversion of a listed agricultural building into a family home.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Current Project Section -->
+        <section class="current-project">
+            <span class="section-title">current project:</span>
+            <span class="content">Wolverhampton Community Centre — a new-build facility providing multi-generational spaces for a growing neighbourhood.</span>
+        </section>
+
+        <figure class="current-project-image">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&h=600&fit=crop" alt="Current project visualization" loading="lazy">
+            <figcaption class="caption">1 — early concept render showing the main entrance and public plaza</figcaption>
+        </figure>
+
+        <hr class="section-divider">
+
+        <!-- About Section with Long-form Content -->
+        <section class="about-section" id="about">
+            <h2 class="section-heading">about axis design</h2>
+
+            <div class="about-content">
+                <p>Axis Design is a small architecture practice based in the West Midlands, founded on the belief that <span class="highlight">good design should be accessible to all</span>. We work across scales—from intimate domestic projects to larger community buildings—always with sustainability and user wellbeing at the heart of our approach.</p>
+
+                <p>Our work is grounded in context: understanding the history, ecology, and social fabric of each site before putting pen to paper. We see architecture not as the imposition of form, but as a conversation between people, place, and possibility.<a href="#fn1" id="ref1" class="footnote-ref">1</a></p>
+
+                <div class="services">
+                    <div class="service-item">
+                        <div class="service-icon">&#9632;</div>
+                        <div class="service-text">
+                            <strong>New Build</strong> — From single dwellings to multi-storey developments, we guide projects from initial brief through to completion.
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">&#9679;</div>
+                        <div class="service-text">
+                            <strong>Conservation</strong> — Sensitive interventions in historic buildings, balancing heritage value with contemporary needs.
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">&#9650;</div>
+                        <div class="service-text">
+                            <strong>Consultation</strong> — Planning advice, feasibility studies, and design reviews for clients and other practices.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Blog Preview Section -->
+        <section class="blog-preview" id="blog">
+            <span class="section-title">latest news:</span>
+            <div class="blog-entries">
+                <article class="blog-entry">
+                    <h3><a href="#" class="blog-title-link">On the Future of Sustainable Materials</a></h3>
+                    <time datetime="2024-12-15">15 December 2024</time>
+                    <div class="blog-content">
+                        <p>The construction industry stands at a crossroads. With embodied carbon now accounting for a significant portion of a building's lifetime emissions, the materials we specify have never mattered more. This month, I visited a hemp-lime demonstration project that offers a glimpse of what's possible...</p>
+                    </div>
+                    <a href="#" class="read-more">read more →</a>
+                </article>
+
+                <hr class="post-divider">
+
+                <article class="blog-entry">
+                    <h3><a href="#" class="blog-title-link">Community Consultation: Lessons Learned</a></h3>
+                    <time datetime="2024-11-28">28 November 2024</time>
+                    <div class="blog-content">
+                        <p>After completing our latest community centre project, I've been reflecting on what makes public consultation truly effective. It's not enough to hold a meeting and tick a box—meaningful engagement requires...</p>
+                    </div>
+                    <a href="#" class="read-more">read more →</a>
+                </article>
+            </div>
+            <a href="#" class="view-all">view all posts →</a>
+        </section>
+
+        <!-- Footnotes Section -->
+        <section class="footnotes">
+            <ol>
+                <li id="fn1">
+                    This approach draws on Christopher Alexander's pattern language and the participatory design methods pioneered by architects like Ralph Erskine.
+                    <a href="#ref1" class="footnote-backref" aria-label="Back to reference 1">↩</a>
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-branding">
+                <span class="footer-name">axis design</span>
+                <span class="footer-tagline">architecture for people & place</span>
+            </div>
+            <div class="footer-contact">
+                <p>Wolverhampton, West Midlands</p>
+                <p><a href="mailto:hello@axisdesign.co.uk">hello@axisdesign.co.uk</a></p>
+            </div>
+        </div>
+        <p class="footer-copyright">&copy; 2024 Rob Annable / Axis Design. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
