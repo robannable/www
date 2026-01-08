@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /S \"C:\\Users\\rob\\Documents\\GitHub\\axis grid\")",
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd text popup tiles for About, Contact, Projects, and Now\n\n- Convert About, Contact, Projects to ''text'' type with popup overlays\n- Add new ''Now'' tile for tweet-like status updates\n- Create now-archive.html page for past updates history\n- Text popups show editable paragraph + link to full page\n- First click expands overlay, link navigates to detail page\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

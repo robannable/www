@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Grid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grid-container" id="gridContainer">
+        <!-- Grid items will be populated by JavaScript -->
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <a id="modalLink" href="#" target="_blank">Learn More</a>
+        </div>
+    </div>
+
+    <script>
+        // Fallback data used if external JSON cannot be fetched (e.g., opened from file://)
+        const defaultContentData = {
+            fixedItems: [
+                { type: 'text', title: 'About', colour: '#90C695', popupText: 'Edit this paragraph to describe who you are, your background, and what drives your work.', linkText: 'Read more about us', link: '/about.html' },
+                { type: 'text', title: 'Contact', colour: '#B8621B', popupText: 'Edit this paragraph with your contact information and preferred ways to get in touch.', linkText: 'Get in touch', link: '/contact.html' },
+                { type: 'text', title: 'Projects', colour: '#2D5A3D', popupText: 'Edit this paragraph to give an overview of your project work.', linkText: 'View all projects', link: '/projects.html' },
+                { type: 'text', title: 'Now', colour: '#5C6BC0', popupText: 'Edit this with a tweet-length update about what you are currently working on.', linkText: 'View past updates', link: '/now-archive.html' }
+            ],
+            imageItems: [
+                { type: 'image', title: 'Landscape Photography', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop', description: 'Capturing the beauty of natural landscapes through thoughtful composition and lighting.', link: '/photography/landscapes.html' },
+                { type: 'image', title: 'Architectural Details', image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=400&fit=crop', description: 'Exploring the intersection of form and function in modern architecture.', link: '/architecture/details.html' },
+                { type: 'image', title: 'Urban Exploration', image: 'https://images.unsplash.com/photo-1444927714506-8492d94b5ba0?w=400&h=400&fit=crop', description: 'Discovering hidden stories within urban environments and city spaces.', link: '/urban/exploration.html' },
+                { type: 'image', title: 'Abstract Compositions', image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=400&fit=crop', description: 'Playing with colour, form, and texture to create compelling abstract visuals.', link: '/abstract/compositions.html' },
+                { type: 'image', title: 'Natural Textures', image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=400&fit=crop', description: 'Intimate studies of patterns and textures found in the natural world.', link: '/nature/textures.html' },
+                { type: 'image', title: 'Industrial Design', image: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=400&fit=crop', description: 'Examining the beauty and functionality of industrial design elements.', link: '/industrial/design.html' }
+            ]
+        };
+
+        // Load content data from external JSON to avoid duplication
+        async function fetchContentData() {
+            try {
+                const response = await fetch('content_config_json.json', { cache: 'no-store' });
+                if (!response.ok) throw new Error('Failed to load content JSON');
+                return await response.json();
+            } catch (error) {
+                console.warn('Falling back to inline default content because JSON could not be fetched. If you are opening the HTML file directly from disk, run a local server to enable fetch.', error);
+                return defaultContentData;
+            }
+        }
+
+        class GridPortfolio {
+            constructor() {
+                this.gridContainer = document.getElementById('gridContainer');
+                this.modal = document.getElementById('modal');
+                this.modalTitle = document.getElementById('modalTitle');
+                this.modalDescription = document.getElementById('modalDescription');
+                this.modalLink = document.getElementById('modalLink');
+                this.closeBtn = document.querySelector('.close');
+                
+                this.currentPage = 0;
+                this.itemsPerLoad = 12; // Load 12 more items each time (4 rows of 3)
+                this.isLoading = false;
+                this.hasLoadedFixed = false;
+                
+                this.init();
+            }
+
+            async init() {
+                this.contentData = await fetchContentData();
+                this.createInitialGrid();
+                this.bindEvents();
+                this.setupInfiniteScroll();
+            }
+
+            createInitialGrid() {
+                // First load: show fixed items + some random images
+                const shuffledImages = this.shuffleArray([...(this.contentData?.imageItems || [])]);
+                const initialImages = shuffledImages.slice(0, 6); // Start with 6 images
+                
+                const allItems = [...(this.contentData?.fixedItems || []), ...initialImages];
+                this.renderItems(allItems);
+                this.hasLoadedFixed = true;
+                this.currentPage = 1;
+            }
+
+            renderItems(items) {
+                items.forEach((item, index) => {
+                    const gridItem = this.createGridItem(item, index);
+                    this.gridContainer.appendChild(gridItem);
+                });
+            }
+
+            createGridItem(item, index) {
+                const container = document.createElement('div');
+                container.className = `grid-item ${item.type}-item`;
+                container.dataset.index = index;
+                container.tabIndex = 0;
+
+                if (item.type === 'text') {
+                    // Text popup items (About, Contact, Projects, Now)
+                    container.style.backgroundColor = item.colour;
+                    const label = document.createElement('span');
+                    label.className = 'tile-label';
+                    label.textContent = (item.title || '').toLowerCase();
+
+                    // Randomize text position
+                    const positions = [
+                        { left: '15%', top: '15%' },
+                        { left: '85%', top: '15%' },
+                        { left: '15%', top: '85%' },
+                        { left: '85%', top: '85%' },
+                        { left: '50%', top: '20%' },
+                        { left: '20%', top: '80%' },
+                        { left: '80%', top: '80%' },
+                        { left: '25%', top: '25%' },
+                        { left: '75%', top: '25%' },
+                        { left: '25%', top: '75%' },
+                        { left: '75%', top: '75%' }
+                    ];
+                    const randomPos = positions[Math.floor(Math.random() * positions.length)];
+                    label.style.left = randomPos.left;
+                    label.style.top = randomPos.top;
+                    container.appendChild(label);
+
+                    // Text popup overlay with paragraph and link
+                    const overlay = document.createElement('div');
+                    overlay.className = 'overlay text-overlay';
+                    overlay.innerHTML = `
+                        <div class="text-popup-content">
+                            <p class="popup-text">${item.popupText || ''}</p>
+                            <a href="${item.link || '#'}" class="popup-link">${item.linkText || 'Learn more'}</a>
+                        </div>
+                    `;
+                    container.appendChild(overlay);
+                } else if (item.type === 'colour') {
+                    container.style.backgroundColor = item.colour;
+                    const link = document.createElement('a');
+                    link.href = item.link || '#';
+                    link.className = 'link';
+                    link.setAttribute('aria-label', item.title || 'Link');
+                    link.style.color = 'inherit';
+                    link.style.textDecoration = 'none';
+                    link.textContent = (item.title || '').toLowerCase();
+
+                    // Randomize text position with 10px minimum padding from edges
+                    const positions = [
+                        { left: '15%', top: '15%' },
+                        { left: '85%', top: '15%' },
+                        { left: '15%', top: '85%' },
+                        { left: '85%', top: '85%' },
+                        { left: '50%', top: '20%' },
+                        { left: '20%', top: '80%' },
+                        { left: '80%', top: '80%' },
+                        { left: '25%', top: '25%' },
+                        { left: '75%', top: '25%' },
+                        { left: '25%', top: '75%' },
+                        { left: '75%', top: '75%' }
+                    ];
+                    const randomPos = positions[Math.floor(Math.random() * positions.length)];
+                    link.style.left = randomPos.left;
+                    link.style.top = randomPos.top;
+                    link.style.transform = 'translate(-50%, -50%)';
+                    link.style.padding = '10px';
+                    link.style.boxSizing = 'border-box';
+
+                    // Prevent immediate navigation on first click; handle in JS
+                    link.addEventListener('click', (e) => e.preventDefault());
+                    container.appendChild(link);
+
+                    // Overlay content for first-click expansion
+                    const overlay = document.createElement('div');
+                    overlay.className = 'overlay';
+                    overlay.innerHTML = `<div><div style="font-weight:700;margin-bottom:6px;">${(item.title || '').toLowerCase()}</div><div style="font-size:0.9rem;opacity:0.9;">${item.description || ''}</div></div>`;
+                    container.appendChild(overlay);
+                } else if (item.type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = item.image;
+                    img.loading = 'lazy';
+                    img.alt = item.title || '';
+                    container.appendChild(img);
+
+                    // Overlay content for first-click expansion
+                    const overlay = document.createElement('div');
+                    overlay.className = 'overlay';
+                    overlay.innerHTML = `<div><div style="font-weight:700;margin-bottom:6px;">${(item.title || '').toLowerCase()}</div><div style="font-size:0.9rem;opacity:0.9;">${item.description || ''}</div></div>`;
+                    container.appendChild(overlay);
+                }
+
+                container.itemData = item;
+                return container;
+            }
+
+            shuffleArray(array) {
+                const shuffled = [...array];
+                for (let i = shuffled.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                }
+                return shuffled;
+            }
+
+            setupInfiniteScroll() {
+                window.addEventListener('scroll', () => {
+                    if (this.isLoading) return;
+                    
+                    const scrollHeight = document.documentElement.scrollHeight;
+                    const scrollTop = document.documentElement.scrollTop;
+                    const clientHeight = document.documentElement.clientHeight;
+                    
+                    // Load more when user is within 1000px of bottom
+                    if (scrollTop + clientHeight >= scrollHeight - 1000) {
+                        this.loadMoreItems();
+                    }
+                });
+            }
+
+            async loadMoreItems() {
+                if (this.isLoading) return;
+                
+                this.isLoading = true;
+                this.showLoadingIndicator();
+                
+                // Simulate network delay for better UX
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                // Generate new random images
+                const shuffledImages = this.shuffleArray([...(this.contentData?.imageItems || [])]);
+                const newItems = shuffledImages.slice(0, this.itemsPerLoad);
+                
+                this.renderItems(newItems);
+                this.removeLoadingIndicator();
+                
+                this.currentPage++;
+                this.isLoading = false;
+            }
+
+            showLoadingIndicator() {
+                const existingIndicator = document.querySelector('.loading-indicator');
+                if (!existingIndicator) {
+                    const loadingDiv = document.createElement('div');
+                    loadingDiv.className = 'loading-indicator';
+                    loadingDiv.innerHTML = '<div class="loading-spinner"></div>Loading more content...';
+                    this.gridContainer.appendChild(loadingDiv);
+                }
+            }
+
+            removeLoadingIndicator() {
+                const indicator = document.querySelector('.loading-indicator');
+                if (indicator) {
+                    indicator.remove();
+                }
+            }
+
+            bindEvents() {
+                // Grid item clicks with in-tile expansion
+                this.gridContainer.addEventListener('click', (e) => {
+                    const gridItem = e.target.closest('.grid-item');
+                    if (!gridItem || !gridItem.itemData) return;
+
+                    const item = gridItem.itemData;
+
+                    // For text items, clicking the link inside the overlay should navigate
+                    if (e.target.classList.contains('popup-link')) {
+                        // Allow the link to work normally
+                        return;
+                    }
+
+                    if (!gridItem.classList.contains('expanded')) {
+                        // First click: expand overlay within the tile
+                        gridItem.classList.add('expanded');
+                        return;
+                    }
+
+                    // Second click behaviour depends on type
+                    if (item.type === 'text') {
+                        // For text items, second click just collapses (link is inside overlay)
+                        gridItem.classList.remove('expanded');
+                    } else if (item.type === 'colour') {
+                        if (item.link) window.location.href = item.link;
+                    } else if (item.type === 'image') {
+                        this.openModal(item);
+                    }
+                });
+
+                // Collapse overlay on Escape or clicking outside any tile
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        const expanded = document.querySelector('.grid-item.expanded');
+                        if (expanded) expanded.classList.remove('expanded');
+                    }
+                });
+                document.addEventListener('click', (e) => {
+                    const expanded = document.querySelector('.grid-item.expanded');
+                    if (expanded && !e.target.closest('.grid-item.expanded')) {
+                        expanded.classList.remove('expanded');
+                    }
+                });
+
+                // Modal close events
+                this.closeBtn.addEventListener('click', () => this.closeModal());
+                this.modal.addEventListener('click', (e) => {
+                    if (e.target === this.modal) {
+                        this.closeModal();
+                    }
+                });
+
+                // Escape key to close modal
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        this.closeModal();
+                    }
+                });
+            }
+
+            openModal(item) {
+                this.modalTitle.textContent = item.title || 'Untitled';
+                this.modalDescription.textContent = item.description;
+                this.modalLink.href = item.link;
+                this.modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+
+            closeModal() {
+                this.modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+
+            // Method to manually trigger loading more items
+            loadMore() {
+                this.loadMoreItems();
+            }
+        }
+
+        // Initialize the portfolio when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            window.portfolio = new GridPortfolio();
+        });
+    </script>
+</body>
+</html>

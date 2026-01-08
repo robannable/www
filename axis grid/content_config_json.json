@@ -1,0 +1,122 @@
+{
+  "fixedItems": [
+    {
+      "type": "text",
+      "title": "About",
+      "colour": "#90C695",
+      "popupText": "Edit this paragraph to describe who you are, your background, and what drives your work. Keep it concise - this is the first impression visitors get.",
+      "linkText": "Read more about us",
+      "link": "/about.html"
+    },
+    {
+      "type": "text",
+      "title": "Contact",
+      "colour": "#B8621B",
+      "popupText": "Edit this paragraph with your contact information and preferred ways to get in touch. Include email, phone, or social media as appropriate.",
+      "linkText": "Get in touch",
+      "link": "/contact.html"
+    },
+    {
+      "type": "text",
+      "title": "Projects",
+      "colour": "#2D5A3D",
+      "popupText": "Edit this paragraph to give an overview of your project work. Highlight the types of projects you take on and your approach to design.",
+      "linkText": "View all projects",
+      "link": "/projects.html"
+    },
+    {
+      "type": "text",
+      "title": "Now",
+      "colour": "#5C6BC0",
+      "popupText": "Edit this with a tweet-length update about what you're currently working on, reading, or thinking about. Keep it fresh and personal.",
+      "linkText": "View past updates",
+      "link": "/now-archive.html"
+    },
+    {
+      "type": "colour",
+      "title": "",
+      "colour": "#F4D03F",
+      "description": "A collection of experimental work and creative explorations.",
+      "link": "/experiments.html"
+    },
+    {
+      "type": "colour",
+      "title": "",
+      "colour": "#DC8B3C",
+      "description": "Resources and tools that I find useful in my creative process.",
+      "link": "/resources.html"
+    },
+    {
+      "type": "colour",
+      "title": "",
+      "colour": "#E91E63",
+      "description": "Latest news and updates from my creative journey.",
+      "link": "/news.html"
+    },
+    {
+      "type": "colour",
+      "title": "",
+      "colour": "#90C695",
+      "description": "Thoughts and insights on design, creativity, and innovation.",
+      "link": "/insights.html"
+    },
+    {
+      "type": "colour",
+      "title": "",
+      "colour": "#F4D03F",
+      "description": "A showcase of collaborative works with other creatives.",
+      "link": "/collaborations.html"
+    },
+    {
+      "type": "colour",
+      "title": "",
+      "colour": "#C65D07",
+      "description": "Behind-the-scenes look at my creative process and methodology.",
+      "link": "/process.html"
+    }
+  ],
+  "imageItems": [
+    {
+      "type": "image",
+      "title": "Landscape Photography",
+      "image": "/images/landscape-01.jpg",
+      "description": "Capturing the beauty of natural landscapes through thoughtful composition and lighting.",
+      "link": "/photography/landscapes.html"
+    },
+    {
+      "type": "image", 
+      "title": "Architectural Details",
+      "image": "/images/architecture-01.jpg",
+      "description": "Exploring the intersection of form and function in modern architecture.",
+      "link": "/architecture/details.html"
+    },
+    {
+      "type": "image",
+      "title": "Urban Exploration", 
+      "image": "/images/urban-01.jpg",
+      "description": "Discovering hidden stories within urban environments and city spaces.",
+      "link": "/urban/exploration.html"
+    },
+    {
+      "type": "image",
+      "title": "Abstract Compositions",
+      "image": "/images/abstract-01.jpg", 
+      "description": "Playing with colour, form, and texture to create compelling abstract visuals.",
+      "link": "/abstract/compositions.html"
+    },
+    {
+      "type": "image",
+      "title": "Natural Textures",
+      "image": "/images/nature-01.jpg",
+      "description": "Intimate studies of patterns and textures found in the natural world.",
+      "link": "/nature/textures.html"
+    },
+    {
+      "type": "image",
+      "title": "Industrial Design",
+      "image": "/images/industrial-01.jpg", 
+      "description": "Examining the beauty and functionality of industrial design elements.",
+      "link": "/industrial/design.html"
+    }
+  ]
+}

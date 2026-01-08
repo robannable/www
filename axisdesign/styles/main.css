@@ -1,0 +1,618 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --highlight-color: #fff04d;
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    font-weight: 300; /* Lighter base font weight for better readability */
+    padding-top: calc(2.5rem + 32px); /* Increased from 1.5rem */
+}
+
+/* Header styles */
+.site-header {
+    margin-bottom: 1.5rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.branding {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+.branding h1 {
+    font-size: 2.7rem;
+    font-weight: 600;
+    margin: 0 0 0.05rem 0;
+    padding: 0;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    line-height: 1; /* Reduced line height */
+}
+
+.branding h2 {
+    font-size: 2.1rem;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    position: relative;
+    left: 0;
+    transform-origin: left;
+    transform: scaleX(1.15);
+    margin-left: -0.1em;
+    line-height: 1; /* Reduced line height */
+}
+
+.logo img {
+    max-width: 100px;
+    height: 4.8rem;
+    width: auto;
+}
+
+/* Image gallery styles */
+.image-gallery {
+    position: relative;
+    margin: 2rem 0; /* Reduced padding above and below */
+}
+
+.gallery-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-track figure {
+    position: relative;
+    height: 210px; /* Reduced from 300px (30% reduction) */
+    min-width: 315px; /* Maintaining 3:2 aspect ratio with new height */
+    margin-right: 0; /* Removed spacing between images */
+    overflow: hidden;
+    background: #ffffff; /* Background for transparent PNGs */
+    cursor: pointer;
+}
+
+.gallery-track img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.1);
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+    background: #ffffff; /* Fallback for transparent PNGs */
+}
+
+.gallery-track figure:hover img {
+    filter: grayscale(0%) contrast(1);
+    transform: scale(1.05);
+}
+
+.gallery-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--highlight-color);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-control:hover {
+    background: var(--highlight-color);
+    opacity: 0.9;
+}
+
+.gallery-control.prev {
+    left: 0;
+}
+
+.gallery-control.next {
+    right: 0;
+}
+
+/* Image hover effect */
+.image-hover-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-track figure:hover .image-hover-info {
+    transform: translateY(0);
+}
+
+.image-hover-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.image-hover-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 300;
+}
+
+/* Current project styles */
+.current-project {
+    margin: 0 0 1.5rem 0;
+}
+
+.current-project-image {
+    margin: 0 0 3rem 0;
+    width: 100%;
+}
+
+.current-project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.current-project-image figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: left;
+    font-style: italic;
+}
+
+.project-description {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.project-description .label {
+    font-weight: 500;
+}
+
+.current-project p:first-of-type {
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+/* Services styles */
+.services {
+    margin: 3rem 0;
+}
+
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.service-logo {
+    margin-right: 1.5rem;
+    min-width: 40px;
+}
+
+.service-logo img {
+    width: 40px;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.service-text {
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-align: justify;
+}
+
+/* Footer styles */
+.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+/* Highlight style */
+.highlight {
+    background-color: var(--highlight-color);
+    padding: 0 0.2em;
+}
+
+/* Quote styles */
+.quote-section {
+    margin: 3rem 0;
+    font-style: italic;
+    font-weight: 200;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+}
+
+/* Blog styles */
+.blog-preview {
+    margin: 0 0 3rem 0;
+    line-height: 1;
+}
+
+.blog-preview .section-title,
+.blog-preview .content {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.blog-entries {
+    margin-top: 2rem;
+    border: 1px dashed #333;
+    padding: 20px;
+}
+
+.blog-preview .blog-entry {
+    margin-bottom: 0;
+    max-width: calc(100% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-preview h3 {
+    font-size: 1.2rem; /* Match current project title size */
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.blog-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.blog-entry {
+    margin-bottom: 0;
+}
+
+.blog-entry h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.blog-title-link {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-title-link:hover {
+    color: var(--highlight-color);
+    text-decoration: underline;
+}
+
+.blog-entry time {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.blog-content {
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    font-weight: 300;
+}
+
+.blog-content h2,
+.blog-content h3 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    margin: 2rem 0 1rem;
+}
+
+.blog-content h2 {
+    font-size: 1.5rem;
+}
+
+.blog-content h3 {
+    font-size: 1.3rem;
+}
+
+.blog-content ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.blog-content code {
+    font-family: monospace;
+    background: #f5f5f5;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+.view-all {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+.blog-entry .read-more {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.blog-entry .read-more:hover {
+    text-decoration: underline;
+}
+
+.post-divider {
+    border: none;
+    height: 1px;
+    background-color: var(--text-color);
+    opacity: 0.2;
+    margin: 1.5rem 0;
+}
+
+.blog-preview .blog-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.section-title, .content {
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: inline;
+    line-height: 1;
+    vertical-align: top;
+}
+
+.content {
+    font-weight: 300;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 2rem 0;
+    width: 100%;
+    clear: both;
+}
+
+/* Temporary spacing guides */
+/*.quote-section,
+.services,
+.current-project,
+.current-project-image,
+.blog-preview {
+    outline: 1px solid rgba(0, 0, 0, 0.1);
+}*/
+
+/* Top bar styles */
+.top-bar {
+    background-color: #f5f5f5;
+    padding: 8px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav-links {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.nav-links a {
+    color: #666;
+    text-decoration: none;
+    padding: 0 0.3rem;
+}
+
+.nav-links a:hover {
+    color: #333;
+}
+
+.quote {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: right;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #666;
+}
+
+/* Load more button styles */
+.load-more-container {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem 0;
+}
+
+.load-more-btn {
+    background: var(--highlight-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.load-more-btn:hover {
+    background: #e6d800;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.load-more-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+        padding-top: calc(2.5rem + 24px);
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .branding h1 {
+        font-size: 2rem;
+    }
+
+    .branding h2 {
+        font-size: 1.5rem;
+        transform: scaleX(1.1);
+    }
+
+    .logo img {
+        height: 3.5rem;
+    }
+
+    /* Gallery responsive */
+    .gallery-track figure {
+        height: 160px;
+        min-width: 240px;
+    }
+
+    .gallery-control {
+        padding: 0.6rem;
+    }
+
+    /* Services responsive */
+    .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .service-logo {
+        margin-right: 0;
+        margin-bottom: 0.75rem;
+    }
+
+    .service-text {
+        font-size: 1rem;
+    }
+
+    /* Quote responsive */
+    .quote-section {
+        font-size: 1.1rem;
+        margin: 2rem 0;
+    }
+
+    /* Blog responsive */
+    .blog-entry h2 {
+        font-size: 1.4rem;
+    }
+
+    .blog-content {
+        font-size: 1rem;
+    }
+
+    .section-title, .content {
+        font-size: 1.1rem;
+    }
+
+    /* Navigation responsive */
+    .nav-links {
+        font-size: 0.85rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.75rem;
+        padding-top: calc(2.5rem + 20px);
+    }
+
+    .branding h1 {
+        font-size: 1.6rem;
+    }
+
+    .branding h2 {
+        font-size: 1.2rem;
+    }
+
+    .gallery-track figure {
+        height: 140px;
+        min-width: 200px;
+    }
+
+    .image-hover-info {
+        padding: 0.5rem;
+    }
+
+    .image-hover-info h3 {
+        font-size: 0.9rem;
+    }
+
+    .image-hover-info p {
+        font-size: 0.8rem;
+    }
+
+    .blog-entries {
+        padding: 15px;
+    }
+
+    .services {
+        margin: 2rem 0;
+    }
+
+    .nav-links a {
+        padding: 0 0.2rem;
+    }
+} 

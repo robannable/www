@@ -1,0 +1,97 @@
+{
+    "topQuote": "architecture is the will of an epoch translated into space",
+    "currentProject": {
+        "description": "The proliferation of rules, standards, norms, and laws that define the dimensions and material properties of architecture, landscape architecture, urban planning, civil engineering, and transportation are a true structure. ",
+        "imageCaption": "Visualization of the current project showing the proposed development"
+    },
+    "latestNews": {
+        "description": "practice news and research notes, via the",
+        "link": {
+            "text": "blog",
+            "href": "blog.html"
+        }
+    },
+    "footerText": "© 2025 Rob Annable | Axis Design",
+    "services": [
+        {
+            "number": 1,
+            "title": "Architectural Design",
+            "description": "Full architectural services from concept to completion, specializing in sustainable community buildings."
+        },
+        {
+            "number": 2,
+            "title": "Planning Applications",
+            "description": "Expert guidance through the planning process with a strong track record of successful approvals."
+        },
+        {
+            "number": 3,
+            "title": "Feasibility Studies",
+            "description": "Early-stage project assessment to evaluate viability, costs, and design opportunities."
+        }
+    ],
+    "gallery": [
+        {
+            "id": 1,
+            "image": "project-1.png",
+            "title": "Birmingham Settlement",
+            "description": "Community building at Edgbaston Reservoir",
+            "link": "blog.html#birmingham-settlement-community-building"
+        },
+        {
+            "id": 2,
+            "image": "project-2.png",
+            "title": "Cotteridge Park",
+            "description": "Community building project",
+            "link": "blog.html#cotteridge-park-community-building"
+        },
+        {
+            "id": 3,
+            "image": "project-3.png",
+            "title": "Coworking Concepts",
+            "description": "Shared workspace design",
+            "link": "blog.html#coworking-concepts"
+        },
+        {
+            "id": 4,
+            "image": "project-4.png",
+            "title": "Ecoterrace",
+            "description": "Sustainable housing development",
+            "link": "blog.html#ecoterrace"
+        },
+        {
+            "id": 5,
+            "image": "project-5.png",
+            "title": "Queens Road",
+            "description": "Urban development project",
+            "link": "blog.html#queens-road"
+        },
+        {
+            "id": 6,
+            "image": "project-6.png",
+            "title": "RIBA Rethink 2025",
+            "description": "Street Support Hub competition entry",
+            "link": "blog.html#ribas-rethink-2025-competition---street-support-hub"
+        },
+        {
+            "id": 7,
+            "image": "project-7.png",
+            "title": "Self-Build Stoke",
+            "description": "Community self-build housing",
+            "link": "blog.html#self-build-in-stoke-on-trent"
+        },
+        {
+            "id": 8,
+            "image": "project-8.png",
+            "title": "Witton Lakes Ecohub",
+            "description": "Environmental community hub",
+            "link": "blog.html#witton-lakes-ecohub"
+        },
+        {
+            "id": 9,
+            "image": "project-9.png",
+            "title": "View All Projects",
+            "description": "See the full portfolio",
+            "link": "projects.html"
+        }
+    ]
+} 

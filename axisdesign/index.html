@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rob Annable at Axis Design - Architecture practice specializing in sustainable community buildings, eco-design, and thoughtful urban development.">
+    <title>Rob Annable | Axis Design</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500;600&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="top-bar">
+        <nav class="nav-links">
+            <a href="index.html">home</a> /
+            <a href="about.html">about</a> /
+            <a href="projects.html">projects</a> /
+            <a href="blog.html">blog</a>
+        </nav>
+    </div>
+
+    <header class="site-header">
+        <div class="header-content">
+            <div class="branding">
+                <h1>rob annable</h1>
+                <h2>@ axis design</h2>
+            </div>
+            <div class="logo">
+                <img src="images/logo.png" alt="Axis Design logo">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="image-gallery">
+            <button class="gallery-control prev" aria-label="Previous image">&larr;</button>
+            <div class="gallery-container">
+                <div class="gallery-track">
+                    <!-- Images will be populated via JavaScript -->
+                </div>
+            </div>
+            <button class="gallery-control next" aria-label="Next image">&rarr;</button>
+        </section>
+
+        <section class="quote-section">
+            Lorem ipsum dolor sit amet, <span class="highlight">consectetur adipiscing elit</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+        </section>
+
+        <section class="services">
+            <!-- Services populated via JavaScript from content.json -->
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="current-project">
+            <span class="section-title">current project:</span> <span class="content"></span>
+        </section>
+
+        <figure class="current-project-image">
+            <img src="images/current/current.png" alt="Current project visualization" loading="lazy">
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <hr class="section-divider">
+
+        <section class="blog-preview">
+            <span class="section-title">latest news:</span> <span class="content"></span>
+            <div class="blog-entries">
+                <!-- Blog entries will be populated via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-text"></p>
+    </footer>
+
+    <script src="js/gallery.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
